@@ -22,10 +22,7 @@ import com.cuubez.core.util.ConverterUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.QueryParam;
-import javax.ws.rs.HeaderParam;
+import javax.ws.rs.*;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.util.List;
@@ -74,6 +71,10 @@ public class InvocationParametersHandler implements RequestHandler{
                     String name = ((HeaderParam) annotation).value();
                     parameters[i] = ConverterUtil.convert(getHeaderValue(messageContext.getRequestContext().getUrlContext().getHeaderVariableMetaDataList(), name), paramTypes[i]);
                     annotationFound = true;
+
+                } else if(annotation instanceof DefaultValue) {
+
+                    String defaultValue = ((DefaultValue) annotation).value();
 
                 } else {
                     annotationFound = true;

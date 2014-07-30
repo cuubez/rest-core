@@ -60,6 +60,7 @@ public class ResourceInvokeHandler implements RequestHandler {
 
 
         } catch (InvocationTargetException e) {
+            e.printStackTrace();
             log.error(e);
             throw new CuubezException(CuubezExceptionConstance.INVOCATION_EXCEPTION);
         } catch (InstantiationException e) {
