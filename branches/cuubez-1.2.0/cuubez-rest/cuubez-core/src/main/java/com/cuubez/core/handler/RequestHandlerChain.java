@@ -31,28 +31,25 @@ public class RequestHandlerChain {
         RequestHandler uriNormalizeHandler = new URINormalizeHandler();
         uriNormalizeHandler.handleRequest(messageContext);
 
-        RequestContextInitiateHandler requestContextInitiateHandler = new RequestContextInitiateHandler();
-        requestContextInitiateHandler.handleRequest(messageContext);
-
-        HeaderParameterPopulateHandler headerParameterHandler = new HeaderParameterPopulateHandler();
+        RequestHandler headerParameterHandler = new HeaderParameterPopulateHandler();
         headerParameterHandler.handleRequest(messageContext);
 
-        QueryParameterPopulateHandler queryParameterHandler = new QueryParameterPopulateHandler();
+        RequestHandler queryParameterHandler = new QueryParameterPopulateHandler();
         queryParameterHandler.handleRequest(messageContext);
 
-        ResourceSearchHandler resourceSearchHandler = new ResourceSearchHandler();
+        RequestHandler resourceSearchHandler = new ResourceSearchHandler();
         resourceSearchHandler.handleRequest(messageContext);
 
-        InterceptorProcessHandler interceptorProcessHandler = new InterceptorProcessHandler();
+        RequestHandler interceptorProcessHandler = new InterceptorProcessHandler();
         interceptorProcessHandler.handleRequest(messageContext);
 
-        InvocationParametersHandler invocationParametersHandler = new InvocationParametersHandler();
+        RequestHandler invocationParametersHandler = new InvocationParametersHandler();
         invocationParametersHandler.handleRequest(messageContext);
 
-        RequestTransformHandler requestTransformHandler = new RequestTransformHandler();
+        RequestHandler requestTransformHandler = new RequestTransformHandler();
         requestTransformHandler.handleRequest(messageContext);
 
-        ResourceInvokeHandler resourceInvokeHandler = new ResourceInvokeHandler();
+        RequestHandler resourceInvokeHandler = new ResourceInvokeHandler();
         resourceInvokeHandler.handleRequest(messageContext);
 
     }
