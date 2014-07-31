@@ -22,10 +22,10 @@ public class ResponseHandlerChain {
 
     public void doChain(MessageContext messageContext) throws CuubezException {
 
-        ResponseNormalizerHandler responseNormalizerHandler = new ResponseNormalizerHandler();
+        ResponseHandler responseNormalizerHandler = new ResponseNormalizerHandler();
         responseNormalizerHandler.handleResponse(messageContext);
 
-        ResponseTransformHandler resourceTransformHandler = new ResponseTransformHandler();
+        ResponseHandler resourceTransformHandler = new ResponseTransformHandler();
         resourceTransformHandler.handleResponse(messageContext);
 
 
