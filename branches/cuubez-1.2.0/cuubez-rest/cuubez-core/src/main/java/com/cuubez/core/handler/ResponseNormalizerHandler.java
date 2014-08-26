@@ -17,17 +17,11 @@ package com.cuubez.core.handler;
 
 import com.cuubez.core.context.MessageContext;
 import com.cuubez.core.exception.CuubezException;
-import com.cuubez.core.util.ResponseCodeTransformUtil;
-import com.sun.org.apache.xerces.internal.impl.xpath.regex.CaseInsensitiveMap;
-import sun.security.provider.certpath.OCSPResponse;
-
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.core.*;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import java.util.Objects;
 
 public class ResponseNormalizerHandler implements ResponseHandler {
 
